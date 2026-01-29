@@ -1,0 +1,101 @@
+:root {
+  --bg-space: #050510;
+  --primary-cyan: #00f2ff;
+  --secondary-purple: #7e22ce;
+  --accent-magenta: #ff00cc;
+  --text-main: #ffffff;
+  --text-dim: #a1a1aa;
+  
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glow-cyan: 0 0 20px rgba(0, 242, 255, 0.5);
+  --glow-text: 0 0 10px rgba(0, 242, 255, 0.3);
+
+  --section-padding: 4rem 2rem;
+  --heading-size-lg: 3rem;
+  --heading-size-md: 2.5rem;
+  --card-padding: 2rem;
+
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 2rem 1rem;
+    --heading-size-lg: 2rem;
+    --heading-size-md: 1.8rem;
+    --card-padding: 1.5rem;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-space);
+  color: var(--text-main);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-space);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-purple);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-cyan);
+}
+
+/* Utilities */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  padding: var(--card-padding);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--primary-cyan), var(--secondary-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.neon-border {
+  border: 1px solid transparent;
+  transition: 0.3s;
+}
+.neon-border:hover {
+  border-color: var(--primary-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.section-container {
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+.heading-lg {
+  font-size: var(--heading-size-lg);
+  margin-bottom: 2rem;
+}
+
+.heading-md {
+  font-size: var(--heading-size-md);
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 480px) {
+  .glass-card {
+    padding: 1rem;
+  }
+}
+
